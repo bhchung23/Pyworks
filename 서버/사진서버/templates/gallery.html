@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport", content="width=device-width, initial-scale=1.0">
+    <title>사진 갤러리</title>
+    <style>
+        img{
+            width: 300px; 
+        margin: 6px;
+        border: 1px solid #ccc;
+        border-radius: 5px;}
+    </style>
+</head>
+<body>
+    <h2>갤러리(Gallery)</h2>
+    {% for photo in photos %}
+        <img src="{{ url_for('static', filename='photos/' + photo) }}">
+    {% endfor %}
+</body>
+</html>
