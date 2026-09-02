@@ -2,15 +2,14 @@
 import requests
 from bs4 import BeautifulSoup
 
-# 1. 서울시청 사이트 >메뉴글자 수집
-
+# 1. 서울시청 사이트 >메뉴글자 수집: F12 또는 오른쪽마우스+검사
 
 # 2. url 가져오기
 url = "https://www.seoul.go.kr/main/index.jsp"
 response = requests.get(url)
 #print(response.text)
 
-# 3. beautifulsoup으로 html 다루기
+# 3. beautifulsoup으로 html 다루기(파싱)
 soup = BeautifulSoup(response.text, "html.parser")
 print(soup.title) # title 태그 가져오기
 print(soup.title.text)
